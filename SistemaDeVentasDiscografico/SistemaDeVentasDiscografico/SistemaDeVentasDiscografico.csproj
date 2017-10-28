@@ -72,6 +72,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consulta\cDetalleDisco.aspx" />
+    <Content Include="Consulta\cDiscos.aspx" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,11 +93,39 @@
   <ItemGroup>
     <Content Include="Diseño\bootstrap.css" />
     <Content Include="Diseño\bootstrap.min.css" />
+    <Content Include="Diseño\MenuGeneral.ascx" />
     <Content Include="Global.asax" />
+    <Content Include="Registros\dDetalleDisco.aspx" />
     <Content Include="Registros\rDisco.aspx" />
+    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta\cDetalleDisco.aspx.cs">
+      <DependentUpon>cDetalleDisco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta\cDetalleDisco.aspx.designer.cs">
+      <DependentUpon>cDetalleDisco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\cDiscos.aspx.cs">
+      <DependentUpon>cDiscos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta\cDiscos.aspx.designer.cs">
+      <DependentUpon>cDiscos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Diseño\MenuGeneral.ascx.cs">
+      <DependentUpon>MenuGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diseño\MenuGeneral.ascx.designer.cs">
+      <DependentUpon>MenuGeneral.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,6 +135,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Registros\dDetalleDisco.aspx.cs">
+      <DependentUpon>dDetalleDisco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\dDetalleDisco.aspx.designer.cs">
+      <DependentUpon>dDetalleDisco.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rDisco.aspx.cs">
       <DependentUpon>rDisco.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,10 +149,26 @@
     <Compile Include="Registros\rDisco.aspx.designer.cs">
       <DependentUpon>rDisco.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades.cs" />
+    <Compile Include="Validar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{141fa0fd-2094-48f9-85a3-ee25ee1c57bd}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{7fd8f2bd-92be-4985-9ec9-8d5d686c72f0}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{bc49aec1-72a8-41ed-a337-84ceebfe3477}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

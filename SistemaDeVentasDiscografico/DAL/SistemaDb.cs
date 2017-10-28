@@ -17,5 +17,6 @@ namespace DAL
         }
         public virtual DbSet<Discos> disco{ get; set; }
         public virtual DbSet<DetalleDiscos> detalla { get; set; }
+        
     }
 }
