@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="Diseño/bootstrap.css" />
     <link rel="stylesheet" href="Diseño/bootstrap.min.css" />
 
-    
+     <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/Toastr/toastr.min.js"></script>
+    <link href="/Toastr/toastr.min.css" rel="stylesheet" />
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">

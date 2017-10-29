@@ -67,7 +67,16 @@ namespace SistemaDeVentasDiscografico.Registros
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            BuscarDiscos(DiscoBLL.Buscar(v.String(IdTextBox.Text)));
+            if(IdTextBox.Text=="")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar El Campo Disco ID');</script>");
+            }
+            else
+            {
+                BuscarDiscos(DiscoBLL.Buscar(v.String(IdTextBox.Text)));
+
+            }
+            
         }
         protected void BindGrid()
         {
@@ -92,23 +101,55 @@ namespace SistemaDeVentasDiscografico.Registros
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)ViewState["DetalleDiscos"];
-            dt.Rows.Add(CancionTextBox.Text, DuracionTextBox.Text);
-            ViewState["DetalleDiscos"] = dt;
-            this.BindGrid();
+            if (CancionTextBox.Text=="" || DuracionTextBox.Text=="")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el Campo Cancion Y el Campo Duracion');</script>");
+            }
+            else
+            {
+                DataTable dt = (DataTable)ViewState["DetalleDiscos"];
+                dt.Rows.Add(CancionTextBox.Text, DuracionTextBox.Text);
+                ViewState["DetalleDiscos"] = dt;
+                this.BindGrid();
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
+
+            }
+            
            
         }
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            Entidades.DetalleDiscos discos = new Entidades.DetalleDiscos();
-            LlenarClase(discos);
-            DetalleDiscoBLL.Insertar(discos);
+            if (IdTextBox.Text=="" || NombreTextBox.Text=="" || CancionTextBox.Text=="" || DuracionTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar todos los Campos');</script>");
+            }
+            else
+            {
+                Entidades.DetalleDiscos discos = new Entidades.DetalleDiscos();
+                LlenarClase(discos);
+                DetalleDiscoBLL.Insertar(discos);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
+            }
+            
         }
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            BuscarDetalle(DetalleDiscoBLL.Buscar(v.String(detalleTextBox.Text)));
+            if (detalleTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el campo ID');</script>");
+            }
+            else
+            {
+                BuscarDetalle(DetalleDiscoBLL.Buscar(v.String(detalleTextBox.Text)));
+                
+            }
+
+             
+
+
+           
             //BuscarDiscos(DiscoBLL.Buscar(v.String(IdTextBox.Text)));
 
            

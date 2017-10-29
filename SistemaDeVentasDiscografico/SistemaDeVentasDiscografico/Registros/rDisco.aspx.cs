@@ -35,13 +35,14 @@ namespace SistemaDeVentasDiscografico.Registros
         {
             if (NombreTextBox.Text=="" || ArtistaTextBox.Text=="" || ProductorTextBox.Text==""||SelloTextBox.Text=="")
             {
-                Utilidades.ShowToastr(this, "Maldito animal", "Debes llenar ambos campos", "warning");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar Los Campos');</script>");
             }
             else
             {
                 Entidades.Discos discos = new Entidades.Discos();
                 LlenarClase(discos);
                 DiscoBLL.Insertar(discos);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Realizado satisfactoriamente');</script>");
             }
             
             
@@ -50,7 +51,16 @@ namespace SistemaDeVentasDiscografico.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            DiscoBLL.Eliminar(v.String(IdTextBox.Text));
+            if (IdTextBox.Text =="")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el Campo Id');</script>");
+            }
+            else
+            {
+               DiscoBLL.Eliminar(v.String(IdTextBox.Text));
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
+            }
+           
         }
 
         protected void NuevoButton_Click(object sender, EventArgs e)
