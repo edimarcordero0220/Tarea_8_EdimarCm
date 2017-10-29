@@ -19,5 +19,14 @@ namespace Entidades
         public DateTime FechaLanzamiento { get; set; }
         public DateTime FechaCreacion { get; set; }
         public int DetalleId { get; set; }
-    }
+
+        public virtual List<DetalleDiscos> discos { get; set; }
+        public Discos()
+        {
+            this.discos = new List<DetalleDiscos>();
+        }
+
+   
+}
+   
 }

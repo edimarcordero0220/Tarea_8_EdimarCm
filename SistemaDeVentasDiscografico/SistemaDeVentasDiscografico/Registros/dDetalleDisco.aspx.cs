@@ -8,6 +8,7 @@ using Entidades;
 using BLL;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SistemaDeVentasDiscografico.Registros
 {
@@ -22,28 +23,37 @@ namespace SistemaDeVentasDiscografico.Registros
             this.FechaTextBox.Text = string.Format("{0:G}", DateTime.Now);
             if (IsPostBack == false)
             {
-                
 
+
+               
                 dt.Columns.AddRange(new DataColumn[2] { new DataColumn("Cancion"), new DataColumn("Duracion") });
                 ViewState["DetalleDiscos"] = dt;
             }
 
 
-
+            
 
         }
+        private void CargarData()
+        {
+            DetalleDiscos d = new DetalleDiscos();
+            SqlConnection conetar = new SqlConnection("Data Source=DESKTOP-19EANE5;Initial Catalog=SistemaDb;Integrated Security=True");
+            SqlDataAdapter s = new SqlDataAdapter("select Cancion, DuraciondelaCancion from DetalleDiscos", conetar);
+            //DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            s.Fill(dt);
+            this.GridView1.DataSource =(dt) ;
+            GridView1.DataBind();
+         
+
+    }
+
         public void BuscarDetalle(DetalleDiscos d)
         {
-            IdTextBox.Text = d.DiscoId.ToString();
-            NombreTextBox.Text = d.Nombre;
-            d.FechaCreacion=Convert.ToDateTime(FechaTextBox.Text);
-            foreach (GridViewRow dr in GridView1.Rows)
-            {
+            detalleTextBox.Text = d.DetalleDiscoID.ToString();
 
-                d.Cancion = dr.Cells[0].Text;
-                d.DuraciondelaCancion = dr.Cells[1].Text;
-            }
-
+            d.FechaCreacion = Convert.ToDateTime(FechaTextBox.Text);
+            CargarData();
 
 
         }
@@ -67,8 +77,7 @@ namespace SistemaDeVentasDiscografico.Registros
 
         public void LlenarClase(DetalleDiscos d)
         {
-            d.DiscoId = Convert.ToInt32(IdTextBox.Text);
-            d.Nombre = NombreTextBox.Text;
+           
             d.FechaCreacion = Convert.ToDateTime(FechaTextBox.Text);
             foreach (GridViewRow dr in GridView1.Rows)
             {
@@ -99,7 +108,18 @@ namespace SistemaDeVentasDiscografico.Registros
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            BuscarDetalle(DetalleDiscoBLL.Buscar(v.String(IdTextBox.Text)));
+            BuscarDetalle(DetalleDiscoBLL.Buscar(v.String(detalleTextBox.Text)));
+            //BuscarDiscos(DiscoBLL.Buscar(v.String(IdTextBox.Text)));
+
+           
+
+
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

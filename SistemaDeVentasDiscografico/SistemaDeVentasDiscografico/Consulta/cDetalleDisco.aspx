@@ -10,6 +10,9 @@
             text-align: center;
             font-size: xx-large;
         }
+        .auto-style2 {
+            width: 124px;
+        }
     </style>
 </head>
 <body>
@@ -35,12 +38,12 @@
         </table>
         <table style="width:100%;">
             <tr>
-                <td>&nbsp;</td>
+                <td class="auto-style2">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td class="auto-style2">&nbsp;</td>
                 <td>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DetalleDiscoID" DataSourceID="SqlDataSource1">
                         <Columns>
@@ -56,7 +59,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td class="auto-style2">&nbsp;</td>
                 <td>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT [DetalleDiscoID], [DiscoId], [Cancion], [DuraciondelaCancion], [FechaCreacion], [Nombre] FROM [DetalleDiscos]"></asp:SqlDataSource>
                 </td>

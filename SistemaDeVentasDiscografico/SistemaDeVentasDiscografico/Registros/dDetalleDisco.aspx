@@ -46,10 +46,10 @@
             <tr>
                 <td class="auto-style1">
                     <asp:Label ID="Label1" runat="server" Text="Id Detalle"></asp:Label>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="detalleTextBox" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style2">
-                    <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Buscar" />
+                    <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Buscar" style="height: 33px" />
                 </td>
                 <td>
                     <asp:Label ID="Label5" runat="server" Text="Fecha"></asp:Label>
@@ -87,7 +87,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:GridView ID="GridView1" runat="server">
+                    <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     </asp:GridView>
                 </td>
                 <td>&nbsp;</td>

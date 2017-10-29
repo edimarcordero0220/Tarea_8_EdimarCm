@@ -17,6 +17,19 @@ namespace DAL
         }
         public virtual DbSet<Discos> disco{ get; set; }
         public virtual DbSet<DetalleDiscos> detalla { get; set; }
-        
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Discos>()
+                  .HasMany<DetalleDiscos>(df => df.discos)
+                  .WithMany(p => p.disco)
+                  .Map(dfp =>
+                  {
+                      dfp.MapLeftKey("Cancion");
+                      dfp.MapRightKey("Duaracio");
+                      dfp.ToTable("DetalleDisco");
+                  });
+        }
     }
 }
