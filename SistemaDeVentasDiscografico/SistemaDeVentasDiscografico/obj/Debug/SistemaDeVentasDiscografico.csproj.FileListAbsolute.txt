@@ -85,3 +85,5 @@ C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografic
 C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\SistemaDeVentasDiscografico\obj\Debug\SistemaDeVentasDiscografico.csproj.CoreCompileInputs.cache
 C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\SistemaDeVentasDiscografico\obj\Debug\SistemaDeVentasDiscografico.dll
 C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\SistemaDeVentasDiscografico\obj\Debug\SistemaDeVentasDiscografico.pdb
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\SistemaDeVentasDiscografico\obj\Debug\SistemaDeVentasDiscografico.Properties.Resources.resources
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\SistemaDeVentasDiscografico\obj\Debug\SistemaDeVentasDiscografico.csproj.GenerateResource.Cache

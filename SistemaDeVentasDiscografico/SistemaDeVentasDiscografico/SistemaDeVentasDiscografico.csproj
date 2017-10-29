@@ -78,6 +78,7 @@
     <Content Include="content\toastr.min.css" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
+    <Content Include="Base.Master" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,13 +92,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
     <Content Include="Diseño\bootstrap.css" />
     <Content Include="Diseño\bootstrap.min.css" />
     <Content Include="Diseño\MenuGeneral.ascx" />
     <Content Include="Global.asax" />
+    <Content Include="IMG\cd_musica.jpg" />
     <Content Include="Registros\dDetalleDisco.aspx" />
     <Content Include="Registros\rDisco.aspx" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <None Include="Resources\Te Conozco %28Video Oficial%29 Ricardo Arjona.wav" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
@@ -105,6 +109,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base.Master.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base.Master.designer.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\cDetalleDisco.aspx.cs">
       <DependentUpon>cDetalleDisco.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +130,13 @@
     <Compile Include="Consulta\cDiscos.aspx.designer.cs">
       <DependentUpon>cDiscos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Diseño\MenuGeneral.ascx.cs">
       <DependentUpon>MenuGeneral.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +148,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -169,6 +192,12 @@
       <Project>{bc49aec1-72a8-41ed-a337-84ceebfe3477}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

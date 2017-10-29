@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="SistemaDeVentasDiscografico.Base" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <!---------------------------------------------Bootstrap-------------------------------------------------------->
+    <link rel="stylesheet" href="Diseño/bootstrap.css" />
+    <link rel="stylesheet" href="Diseño/bootstrap.min.css" />
+
+    
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form runat="server">
+        
+        <div>
+
+             <h1>Sistema De Venta Discografico</h1>
+            <hr />
+        </div>
+        
+
+
+        <div class="container-fluid">
+            
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            
+            
+        </div>
+        <div>
+            <hr />
+            <h1>.</h1>
+        </div>
+    </form>
+</body>
+</html>
