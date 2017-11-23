@@ -11,6 +11,8 @@ namespace BLL
 {
     public class DiscoBLL
     {
+        public List<DetalleDiscos> Detalle;
+
         public static void Insertar(Discos d)
         {
             try
@@ -25,7 +27,7 @@ namespace BLL
                 throw ex;
             }
         }
-        
+
         public static List<Discos> GetLista()
         {
             List<Discos> lista = new List<Discos>();
@@ -48,5 +50,8 @@ namespace BLL
             SistemaDb db = new SistemaDb();
             return db.disco.Find(Id);
         }
+
+
     }
 }
+

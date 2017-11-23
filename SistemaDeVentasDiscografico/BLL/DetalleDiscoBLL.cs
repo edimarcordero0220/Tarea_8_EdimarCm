@@ -10,6 +10,7 @@ namespace BLL
 {
     public class DetalleDiscoBLL
     {
+        
         public static void Insertar(DetalleDiscos d)
         {
             try

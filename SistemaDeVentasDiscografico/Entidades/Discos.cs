@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-   public  class Discos
+    public class Discos
     {
         [Key]
-        public int DiscoId  { get; set; }
+        public int DiscoId { get; set; }
         public string NombreDisco { get; set; }
-        public string  UsuarioCreador{ get; set; }
+        public string UsuarioCreador { get; set; }
         public string Artista { get; set; }
         public string Productor { get; set; }
         public string SelloDiscografico { get; set; }
@@ -25,8 +25,13 @@ namespace Entidades
         {
             this.discos = new List<DetalleDiscos>();
         }
+        public List<DetalleDiscos> Detalle;
+        public void AgregarDetalle(string Cancion, string DuraciondelaCancion)
+        {
+            this.Detalle.Add(new DetalleDiscos(Cancion, DuraciondelaCancion));
+        }
 
-   
-}
-   
+        
+
+    }
 }

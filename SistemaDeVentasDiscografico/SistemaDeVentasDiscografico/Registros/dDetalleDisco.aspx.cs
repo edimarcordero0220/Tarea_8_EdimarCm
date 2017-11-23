@@ -86,18 +86,24 @@ namespace SistemaDeVentasDiscografico.Registros
 
         public void LlenarClase(DetalleDiscos d)
         {
-           
+            
+            //DetalleDiscos d = new DetalleDiscos();
+
             d.FechaCreacion = Convert.ToDateTime(FechaTextBox.Text);
+            /* foreach (GridViewRow dr in GridView1.Rows)
+             {
+                 d.Cancion= dr.Cells[0].Text;
+                 d.DuraciondelaCancion=dr.Cells[1].Text;
+             }*/
             foreach (GridViewRow dr in GridView1.Rows)
             {
-                d.Cancion= dr.Cells[0].Text;
-                d.DuraciondelaCancion=dr.Cells[1].Text;
+                Discos p = new Discos();
+                p.AgregarDetalle(d.Cancion=dr.Cells[0].Text, d.DuraciondelaCancion=dr.Cells[1].Text);
             }
 
-
-
-
         }
+
+       
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
@@ -111,7 +117,7 @@ namespace SistemaDeVentasDiscografico.Registros
                 dt.Rows.Add(CancionTextBox.Text, DuracionTextBox.Text);
                 ViewState["DetalleDiscos"] = dt;
                 this.BindGrid();
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
+               
 
             }
             
@@ -131,7 +137,7 @@ namespace SistemaDeVentasDiscografico.Registros
                 DetalleDiscoBLL.Insertar(discos);
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
             }
-            
+                
         }
 
         protected void searchButton_Click(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace DAL
         }
         public virtual DbSet<Discos> disco{ get; set; }
         public virtual DbSet<DetalleDiscos> detalla { get; set; }
+        public List<DetalleDiscos> Detalle;
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

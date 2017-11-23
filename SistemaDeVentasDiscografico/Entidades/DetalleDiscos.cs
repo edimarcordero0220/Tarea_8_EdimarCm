@@ -17,12 +17,18 @@ namespace Entidades
         public DateTime FechaCreacion { get; set; }
         public string UsuarioCreador { get; set; }
         public string Nombre { get; set; }
-        //public List<DetalleDiscos> Detalle;
+        
 
         public virtual List<Discos> disco { get; set; }
         public DetalleDiscos()
         {
             this.disco = new List<Discos>();
+        }
+
+        public DetalleDiscos(string cancion, string duraciondelaCancion)
+        {
+            Cancion = cancion;
+            DuraciondelaCancion = duraciondelaCancion;
         }
     }
 }

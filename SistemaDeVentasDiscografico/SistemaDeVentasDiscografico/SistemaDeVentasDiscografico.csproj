@@ -99,9 +99,9 @@
     <Content Include="Global.asax" />
     <Content Include="IMG\cd_musica.jpg" />
     <Content Include="Registros\dDetalleDisco.aspx" />
-    <Content Include="Registros\rDisco.aspx" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <None Include="Resources\Te Conozco %28Video Oficial%29 Ricardo Arjona.wav" />
+    <Content Include="Registros\rDiscos.aspx" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
@@ -165,12 +165,12 @@
     <Compile Include="Registros\dDetalleDisco.aspx.designer.cs">
       <DependentUpon>dDetalleDisco.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\rDisco.aspx.cs">
-      <DependentUpon>rDisco.aspx</DependentUpon>
+    <Compile Include="Registros\rDiscos.aspx.cs">
+      <DependentUpon>rDiscos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\rDisco.aspx.designer.cs">
-      <DependentUpon>rDisco.aspx</DependentUpon>
+    <Compile Include="Registros\rDiscos.aspx.designer.cs">
+      <DependentUpon>rDiscos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
     <Compile Include="Validar.cs" />
