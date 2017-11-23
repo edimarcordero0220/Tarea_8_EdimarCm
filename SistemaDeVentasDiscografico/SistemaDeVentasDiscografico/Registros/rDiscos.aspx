@@ -11,7 +11,7 @@
      <!DOCTYPE html>
     <html>
     <head>
-        <title>Registro Producto</title>
+        <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
                 
                  <div  class="text-center">
                      
-                    <asp:TextBox ID="IdTextBox" runat="server" CssClass="auto-style1" Width="58px"></asp:TextBox>
+                    <asp:TextBox ID="IdTextBox" runat="server" CssClass="auto-style1" Width="48px"></asp:TextBox>
                      &nbsp;&nbsp;
                       <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="58px" /> 
                     
@@ -110,7 +110,7 @@
                 </div>
                 
                  <div class="text-center">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="UsuariosDropDownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="Nombre">
                     </asp:DropDownList>
                     
                 </div>
@@ -129,6 +129,8 @@
             <div class="text-center">
                 <div class="text-center">
                     <div>
+                       
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT [Nombre] FROM [Usuarios]"></asp:SqlDataSource>
                        
                      <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />  
                         &nbsp;&nbsp;

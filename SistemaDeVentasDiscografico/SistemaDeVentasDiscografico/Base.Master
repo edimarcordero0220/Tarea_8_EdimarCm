@@ -34,14 +34,14 @@
                 <li class="dropdown"><a href="Default.aspx">Inicio</a></li>
                 <!--usuarios-->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="Registros/rDiscos.aspx">Registro</a></li>
-                        <li><a href="UI/Consultas/ConsultaUsuariosWebFormaspx.aspx">Consulta</a></li>
+                        <li><a href="Registros/rDiscos.aspx">Registrar Discos</a></li>
+                        <li><a href="Registros/rUsuarios.aspx">Registar Usuarios</a></li>
 
                     </ul>
                 </li>
-                <!--Productos-->
+                <!--Consultas-->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span class="caret"></span></a>
                     <ul class="dropdown-menu">

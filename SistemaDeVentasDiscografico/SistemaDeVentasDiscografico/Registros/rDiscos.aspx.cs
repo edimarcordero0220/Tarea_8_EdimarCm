@@ -28,7 +28,7 @@ namespace SistemaDeVentasDiscografico.Registros
             d.Artista = ArtistaTextBox.Text;
             d.FechaCreacion = Convert.ToDateTime(FechaTextBox.Text);
             d.FechaLanzamiento = Convert.ToDateTime(FechacreacionTextBox.Text);
-
+            d.UsuarioCreador = UsuariosDropDownList.Text;
         }
 
         public void Limpiar()
