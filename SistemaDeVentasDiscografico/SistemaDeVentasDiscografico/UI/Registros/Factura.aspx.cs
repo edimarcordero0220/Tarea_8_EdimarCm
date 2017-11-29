@@ -147,11 +147,19 @@ namespace SistemaDeVentasDiscografico.UI
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)ViewState["Facturas"];
-            dt.Rows.Add(IdDiscoTextBox.Text, NombreDiscoTextBox.Text, PrecioTextBox.Text);
-            ViewState["Facturas"] = dt;
-            LimpiarTexbox();
-            this.BindGrid();
+            if (IdDiscoTextBox.Text =="" || NombreDiscoTextBox.Text=="" || PrecioTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar los sigte campos: id disco, Nombre del disco y el precio');</script>");
+            }
+            else
+            {
+                DataTable dt = (DataTable)ViewState["Facturas"];
+                dt.Rows.Add(IdDiscoTextBox.Text, NombreDiscoTextBox.Text, PrecioTextBox.Text);
+                ViewState["Facturas"] = dt;
+                LimpiarTexbox();
+                this.BindGrid();
+            }
+          
         }
 
         protected void BuscardiscoButton_Click(object sender, EventArgs e)

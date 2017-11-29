@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAL;
+using System.Linq.Expressions;
 
 namespace BLL
 {
@@ -46,6 +47,13 @@ namespace BLL
 
             db.detalla.Remove(cl);
             db.SaveChanges();
+        }
+        public static List<Entidades.DetalleDiscos> GetList(Expression<Func<Entidades.DetalleDiscos, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new Repositorio<DetalleDiscos>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
         }
     }
 }

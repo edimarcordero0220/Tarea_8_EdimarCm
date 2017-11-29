@@ -1,0 +1,14 @@
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\DAL.dll.config
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\DAL.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\DAL.pdb
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\Entidades.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\EntityFramework.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\Entidades.pdb
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\Entidades.dll.config
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\EntityFramework.xml
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\obj\Release\DAL.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\DAL\obj\Release\DAL.pdb

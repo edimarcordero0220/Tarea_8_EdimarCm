@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace BLL.Tests
 {
@@ -14,7 +15,8 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Assert.Fail();
+            Discos disco = new Discos();
+           Assert.IsTrue(DiscoBLL.Insertar(disco));
         }
 
         [TestMethod()]

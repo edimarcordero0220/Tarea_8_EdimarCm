@@ -16,6 +16,7 @@ namespace SistemaDeVentasDiscografico.Registros
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            
         }
 
         Validar v = new Validar();
@@ -29,6 +30,7 @@ namespace SistemaDeVentasDiscografico.Registros
         }
         public void Limpiar()
         {
+            IdTextBox.Text = "";
             NombreTextBox.Text = "";
             ConfirmarTextBox.Text = "";
             ContrasenaTextBox.Text = "";
@@ -52,7 +54,9 @@ namespace SistemaDeVentasDiscografico.Registros
                 UsuarioBLL.Insertar(usu);
                 Limpiar();
                 //Utilidades.ShowToastr(this, "No se ha Registrado Usuario con este ID", "Error", "warning");
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Realizado satisfactoriamente');</script>");
+                // Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Realizado satisfactoriamente');</script>");
+
+                Utilidades.ShowToastr(this, "Registro Procesado", "Exito", "success");
             }
 
         }
@@ -73,6 +77,52 @@ namespace SistemaDeVentasDiscografico.Registros
                 DiscoBLL.Eliminar(v.String(IdTextBox.Text));
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
             }
+        }
+        public void BuscarUsuario(Entidades.Usuarios u)
+        {
+           
+
+                NombreTextBox.Text = u.Nombre;
+                ContrasenaTextBox.Text = u.Contrasena;
+                ConfirmarTextBox.Text = u.ConfirmarContrasena;
+
+ 
+        }
+
+        private bool ValidarBuscar()
+        {
+            if (UsuarioBLL.Buscar(String(IdTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
+                return false;
+
+            }
+
+            return true;
+
+
+        }
+
+        public int String(string texto)
+        {
+            int numero = 0;
+            int.TryParse(texto, out numero);
+            return numero;
+        }
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if (IdTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el Campo Id');</script>");
+            }
+            else
+            {
+                BuscarUsuario(UsuarioBLL.Buscar(v.String(IdTextBox.Text)));
+                
+            }
+           
+
+
         }
     }
 }

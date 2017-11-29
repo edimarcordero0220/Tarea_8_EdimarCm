@@ -21,9 +21,11 @@ namespace BLL
                 db.disco.Add(d);
                 db.SaveChanges();
                 db.Dispose();
+               // return false;
             }
             catch (Exception ex)
             {
+              //  return true;
                 throw ex;
             }
         }

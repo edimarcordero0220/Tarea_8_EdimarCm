@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BLL;
 using Entidades;
 using DAL;
+using System.Web.Security;
 
 namespace SistemaDeVentasDiscografico
 {
@@ -55,7 +56,7 @@ namespace SistemaDeVentasDiscografico
                 if (ValidarUsuario() && ValidarContrasena() == true)
                 {
 
-                    Response.Redirect("Default.aspx");
+                    FormsAuthentication.RedirectFromLoginPage(NombreTextBox.Text, true);
 
 
 

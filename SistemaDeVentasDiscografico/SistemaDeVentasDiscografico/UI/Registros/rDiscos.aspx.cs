@@ -78,5 +78,29 @@ namespace SistemaDeVentasDiscografico.Registros
         {
 
         }
+        public void BuscarDisco(Entidades.Discos d)
+        {
+
+            ProductorTextBox.Text = d.Productor;
+            NombreTextBox.Text = d.NombreDisco;
+            SelloTextBox.Text = d.SelloDiscografico;
+            ArtistaTextBox.Text = d.Artista;
+
+
+        }
+
+        protected void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if (IdTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el Campo Id');</script>");
+            }
+            else
+            {
+                BuscarDisco(DiscoBLL.Buscar(v.String(IdTextBox.Text)));
+
+            }
+
+        }
     }
 }

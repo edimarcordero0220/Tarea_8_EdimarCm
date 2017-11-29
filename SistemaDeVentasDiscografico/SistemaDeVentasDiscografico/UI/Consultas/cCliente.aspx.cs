@@ -42,9 +42,42 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
             ConsultaClienteGridView.DataSource = Listas;
             ConsultaClienteGridView.DataBind();
         }
+
+
+        private bool ValidarBuscar()
+        {
+            if (ClientesBLL.Buscar(String(FlitrarTextbox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
+                return false;
+
+            }
+
+            return true;
+
+
+        }
+
+        public int String(string texto)
+        {
+            int numero = 0;
+            int.TryParse(texto, out numero);
+            return numero;
+        }
+
+
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            BuscarSelecCombo();
+            if(FlitrarTextbox.Text =="")
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debe de Insertar la descripcion');</script>");
+            }
+            else
+            {
+                BuscarSelecCombo();
+                ValidarBuscar();
+            }
+            
         }
 
         protected void ImprimirButton_Click(object sender, EventArgs e)

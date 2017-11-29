@@ -111,18 +111,34 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="UI\Consultas\cCliente.aspx" />
+    <Content Include="UI\Consultas\cDetalleDisco.aspx" />
     <Content Include="UI\Consultas\cDiscos.aspx" />
+    <Content Include="UI\Consultas\cFacturas.aspx" />
     <Content Include="UI\Consultas\cUsuarios.aspx" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
     <Content Include="Base.Master" />
+    <Content Include="FacturaDbDataSet.xsc">
+      <DependentUpon>FacturaDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="FacturaDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FacturaDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="FacturaDbDataSet.xss">
+      <DependentUpon>FacturaDbDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\ProyectoFinalAplica2 - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="UI\General\gCatalogo.aspx" />
+    <Content Include="UI\General\VerCatalogo.aspx" />
     <Content Include="UI\Registros\Factura.aspx" />
     <Content Include="UI\Registros\DetalleDisco.aspx" />
     <Content Include="UI\Reportes\ClienteReportes.aspx" />
@@ -172,7 +188,9 @@
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="UI\Reportes\DetalleDiscoReporte.aspx" />
     <Content Include="UI\Reportes\DiscosReportes.aspx" />
+    <Content Include="UI\Reportes\DfReporte.aspx" />
     <Content Include="UI\Reportes\ReportesUsuariosWebForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -183,6 +201,11 @@
     </Compile>
     <Compile Include="Base.Master.designer.cs">
       <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FacturaDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaDbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SistemaDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -197,12 +220,26 @@
     <Compile Include="UI\Consultas\cCliente.aspx.designer.cs">
       <DependentUpon>cCliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cDetalleDisco.aspx.cs">
+      <DependentUpon>cDetalleDisco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cDetalleDisco.aspx.designer.cs">
+      <DependentUpon>cDetalleDisco.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\cDiscos.aspx.cs">
       <DependentUpon>cDiscos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\Consultas\cDiscos.aspx.designer.cs">
       <DependentUpon>cDiscos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cFacturas.aspx.cs">
+      <DependentUpon>cFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cFacturas.aspx.designer.cs">
+      <DependentUpon>cFacturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cUsuarios.aspx.cs">
       <DependentUpon>cUsuarios.aspx</DependentUpon>
@@ -245,6 +282,20 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UI\General\gCatalogo.aspx.cs">
+      <DependentUpon>gCatalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\General\gCatalogo.aspx.designer.cs">
+      <DependentUpon>gCatalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\General\VerCatalogo.aspx.cs">
+      <DependentUpon>VerCatalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\General\VerCatalogo.aspx.designer.cs">
+      <DependentUpon>VerCatalogo.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\Factura.aspx.cs">
       <DependentUpon>Factura.aspx</DependentUpon>
@@ -293,12 +344,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSistemaDiscos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\DetalleDiscoReporte.aspx.cs">
+      <DependentUpon>DetalleDiscoReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\DetalleDiscoReporte.aspx.designer.cs">
+      <DependentUpon>DetalleDiscoReporte.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\DiscosReportes.aspx.cs">
       <DependentUpon>DiscosReportes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\Reportes\DiscosReportes.aspx.designer.cs">
       <DependentUpon>DiscosReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\DfReporte.aspx.cs">
+      <DependentUpon>DfReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\DfReporte.aspx.designer.cs">
+      <DependentUpon>DfReporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\ReportesUsuariosWebForm.aspx.cs">
       <DependentUpon>ReportesUsuariosWebForm.aspx</DependentUpon>
@@ -335,7 +400,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ClientesReport.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\DetalleDiscoReport.rdlc" />
     <EmbeddedResource Include="UI\Reportes\Discos.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\FacturaReport.rdlc" />
     <EmbeddedResource Include="UI\Reportes\UsuariosReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>

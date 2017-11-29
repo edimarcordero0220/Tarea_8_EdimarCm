@@ -1,0 +1,11 @@
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\Entidades.dll.config
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\Entidades.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\Entidades.pdb
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\EntityFramework.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\EntityFramework.xml
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\obj\Release\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\obj\Release\Entidades.dll
+C:\Users\Edimar Cordero\Source\Repos\Tarea_8_EdimarCm\SistemaDeVentasDiscografico\Entidades\obj\Release\Entidades.pdb

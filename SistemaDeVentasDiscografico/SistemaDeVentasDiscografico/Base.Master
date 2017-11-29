@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="Diseño/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-
+   
+   
      <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="/Toastr/toastr.min.js"></script>
-    <link href="/Toastr/toastr.min.css" rel="stylesheet" />
-
     
+
+   
     
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -37,16 +37,25 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/UI/Registros/rUsuarios.aspx">Registro Usuarios</a></li>
-                        <li><a href="UI/Consultas/cUsuarios.aspx">Consulta</a></li>
+                        <li><a href="/UI/Consultas/cUsuarios.aspx">Consulta</a></li>
 
                     </ul>
                 </li>
-                <!--Consultas-->
+                <!--Clientes-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/UI/Registros/rClientes.aspx">Registro</a></li>
+                        <li><a href="/UI/Consultas/cCliente.aspx">Consulta</a></li>
+
+                    </ul>
+                </li>
+                <!--Discos-->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Discos<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/UI/Registros/rDiscos.aspx">Registro</a></li>
-                        <li><a href="/UI/Consulta/cDiscos.aspx">Consulta</a></li>
+                        <li><a href="/UI/Consultas/cDiscos.aspx">Consulta</a></li>
 
                     </ul>
                 </li>
@@ -54,13 +63,14 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Factura<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/UI/Registros/FacturaWebForm.aspx">Registro</a></li>
-                        <li><a href="#">Consulta</a></li>
+                        <li><a href="/UI/Registros/Factura.aspx">Registro</a></li>
+                        <li><a href="/UI/Consultas/cFacturas.aspx">Consulta</a></li>
 
                     </ul>
                 </li>
-                <li><a href="#">Contactar &nbsp</a></li>
-                <li><a href="#">Cerrar Sesion</a></li>
+
+                
+                //<li><a href="/UI/General/gCatalogo.aspx">Catalogo</a></li>
 
             </ul>
         </div>

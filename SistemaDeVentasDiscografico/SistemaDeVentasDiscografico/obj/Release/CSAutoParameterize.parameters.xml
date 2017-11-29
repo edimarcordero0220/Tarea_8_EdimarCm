@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ConStr-Web.config Connection String" description="ConStr Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:sistemadbs.database.windows.net,1433;Initial Catalog=SistemaDb;User ID=Edimar0220;Password=Cordero0220" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Edimar\ Cordero\\Source\\Repos\\Tarea_8_EdimarCm\\SistemaDeVentasDiscografico\\SistemaDeVentasDiscografico\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConStr']/@connectionString" />
+  </parameter>
+</parameters>

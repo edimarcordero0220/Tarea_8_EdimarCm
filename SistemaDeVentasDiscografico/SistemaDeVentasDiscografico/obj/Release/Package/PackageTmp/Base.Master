@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="SistemaDeVentasDiscografico.Base" %>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <!---------------------------------------------Bootstrap-------------------------------------------------------->
+    <link rel="stylesheet" href="Diseño/bootstrap.css" />
+    <link rel="stylesheet" href="Diseño/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+   
+   
+     <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+
+   
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Base.Master">Edimar Del C. Cordero M.</a>
+            </div>
+            <ul class="nav navbar-nav">
+                
+                <li class="dropdown"><a href="Default.aspx">Inicio</a></li>
+                <!--usuarios-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/UI/Registros/rUsuarios.aspx">Registro Usuarios</a></li>
+                        <li><a href="/UI/Consultas/cUsuarios.aspx">Consulta</a></li>
+
+                    </ul>
+                </li>
+                <!--Clientes-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/UI/Registros/rClientes.aspx">Registro</a></li>
+                        <li><a href="/UI/Consultas/cCliente.aspx">Consulta</a></li>
+
+                    </ul>
+                </li>
+                <!--Discos-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Discos<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/UI/Registros/rDiscos.aspx">Registro</a></li>
+                        <li><a href="/UI/Consultas/cDiscos.aspx">Consulta</a></li>
+
+                    </ul>
+                </li>
+                <!--Factura-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Factura<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/UI/Registros/Factura.aspx">Registro</a></li>
+                        <li><a href="/UI/Consultas/cFacturas.aspx">Consulta</a></li>
+
+                    </ul>
+                </li>
+
+                
+                <li><a href="/UI/General/gCatalogo.aspx">Catalogo</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!------------------------------------------------------------Modal de Inicio de Sesion------------------------------------------>
+
+    <%--<div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-lock"></span>Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="usrname">Nombre Usuario</label>
+                                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="psw">Contraseña</label>
+                                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                            </div>
+
+                            <button type="submit" class="btn btn-default btn-warning btn-block">Login</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>--%>
+
+
+
+    <!--------------------------------------------------contenido--------------------------------------------------------->
+
+    <div class="container">
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+    </form>
+
+    <!-----------------------------------------------------Script----------------------------------------------->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#Btn").click(function () {
+                $("#myModal").modal();
+            });
+        });
+
+    </script>
+</body>
+</html>
