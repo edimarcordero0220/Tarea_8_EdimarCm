@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAL;
-
+using System.Linq.Expressions;
 
 namespace BLL
 {
@@ -51,6 +51,13 @@ namespace BLL
             return db.disco.Find(Id);
         }
 
+        public static List<Entidades.Discos> GetList(Expression<Func<Entidades.Discos, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new Repositorio<Discos>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
 
     }
 }

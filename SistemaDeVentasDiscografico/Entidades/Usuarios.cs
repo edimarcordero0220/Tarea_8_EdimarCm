@@ -14,5 +14,20 @@ namespace Entidades
         public string Nombre { get; set; }
         public string Contrasena { get; set; }
         public string ConfirmarContrasena { get; set; }
+
+        public static List<Entidades.Usuarios> Lista { get; set; }
+        public Usuarios(int usuarioid, string nombre)
+        {
+           
+                this.UsuarioId = usuarioid;
+                this.Nombre = nombre;
+                
+
+            
+        }
+
+        public Usuarios()
+        {
+        }
     }
 }

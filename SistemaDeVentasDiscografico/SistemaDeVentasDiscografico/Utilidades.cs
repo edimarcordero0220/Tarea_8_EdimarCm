@@ -8,8 +8,29 @@ namespace SistemaDeVentasDiscografico
 {
     public static class Utilidades
     {
+        public static int TOINT(string nombre)
+        {
+            int numero;
+            int.TryParse(nombre, out numero);
+            return numero;
+        }
 
+
+     
        
+        internal static int ToInt()
+        {
+            try
+            {
+                Utilidades.ToInt();
+                return ToInt();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static void ShowToastr(this Page page, string message, string title, string type = "info")
         {
             page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",

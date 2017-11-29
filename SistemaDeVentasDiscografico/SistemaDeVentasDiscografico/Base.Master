@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="SistemaDeVentasDiscografico.Base" %>
 
-<%@ Register Src="~/Diseño/MenuGeneral.ascx" TagPrefix="uc1" TagName="Menu" %>
+
 
 <!DOCTYPE html>
 
@@ -30,23 +30,23 @@
                 <a class="navbar-brand" href="Base.Master">Edimar Del C. Cordero M.</a>
             </div>
             <ul class="nav navbar-nav">
-                 <%--<li><asp:HyperLink runat="server" ID="hlCreateAccount" href="Default.aspx">Inicio</asp:HyperLink></li>--%>
+                
                 <li class="dropdown"><a href="Default.aspx">Inicio</a></li>
                 <!--usuarios-->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="Registros/rDiscos.aspx">Registrar Discos</a></li>
-                        <li><a href="Registros/rUsuarios.aspx">Registar Usuarios</a></li>
+                        <li><a href="/UI/Registros/rUsuarios.aspx">Registro Usuarios</a></li>
+                        <li><a href="UI/Consultas/cUsuarios.aspx">Consulta</a></li>
 
                     </ul>
                 </li>
                 <!--Consultas-->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Discos<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="UI/Registros/ProductosWebForm.aspx">Registro</a></li>
-                        <li><a href="#">Consulta</a></li>
+                        <li><a href="/UI/Registros/rDiscos.aspx">Registro</a></li>
+                        <li><a href="/UI/Consulta/cDiscos.aspx">Consulta</a></li>
 
                     </ul>
                 </li>
@@ -54,7 +54,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Factura<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="UI/Registros/FacturaWebForm.aspx">Registro</a></li>
+                        <li><a href="/UI/Registros/FacturaWebForm.aspx">Registro</a></li>
                         <li><a href="#">Consulta</a></li>
 
                     </ul>

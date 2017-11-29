@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAL;
-
+using System.Linq.Expressions;
 
 namespace BLL
 {
@@ -26,6 +26,8 @@ namespace BLL
             }
             
         }
+       
+       
         public static List<Usuarios> GetLista()
         {
             List<Usuarios> lista = new List<Usuarios>();
@@ -55,12 +57,26 @@ namespace BLL
             lista = db.usuario.Where(p => p.Nombre == tmp).ToList();
             return lista;
         }
+        public static List<Usuarios> GetId(int usuarioid)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            SistemaDb db = new SistemaDb();
+            lista = db.usuario.Where(p => p.UsuarioId == usuarioid).ToList();
+            return lista;
+        }
         public static List<Usuarios> GetContrasena(string tmp)
         {
             List<Usuarios> lista = new List<Usuarios>();
             SistemaDb db = new SistemaDb();
             lista = db.usuario.Where(p => p.Contrasena == tmp).ToList();
             return lista;
+        }
+        public static List<Entidades.Usuarios> GetList(Expression<Func<Entidades.Usuarios, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new Repositorio<Usuarios>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
         }
     }
 }

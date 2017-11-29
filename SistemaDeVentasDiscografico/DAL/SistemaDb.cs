@@ -18,6 +18,9 @@ namespace DAL
         public virtual DbSet<Discos> disco{ get; set; }
         public virtual DbSet<DetalleDiscos> detalla { get; set; }
         public virtual DbSet<Usuarios> usuario { get; set; }
+        public virtual DbSet<Clientes>cliente { get; set; }
+        public virtual DbSet<Facturas>factura { get; set; }
+        public virtual DbSet<DetalleFactura>detallefactura { get; set; }
         public List<DetalleDiscos> Detalle;
 
 

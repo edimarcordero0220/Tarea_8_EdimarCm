@@ -39,6 +39,13 @@ namespace BLL
             return db.detalla.Find(Id);
         }
 
+        public static void Eliminar(int v)
+        {
+            SistemaDb db = new SistemaDb();
+            DetalleDiscos cl = db.detalla.Find(v);
 
+            db.detalla.Remove(cl);
+            db.SaveChanges();
+        }
     }
 }

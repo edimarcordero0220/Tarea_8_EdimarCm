@@ -4,19 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using BLL;
+using Entidades;
 using DAL;
 
 namespace SistemaDeVentasDiscografico
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class LoginDelSistema : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
-       
         public bool ValidarUsuario()
         {
             if (UsuarioBLL.GetListaNombre(NombreTextBox.Text).Count() == 0)
@@ -31,7 +30,7 @@ namespace SistemaDeVentasDiscografico
         {
             if (UsuarioBLL.GetContrasena(ContrasenaTextBox.Text).Count() == 0)
             {
-                
+
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Clave invalida!!');</script>");
                 return false;
             }
@@ -39,7 +38,19 @@ namespace SistemaDeVentasDiscografico
         }
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (NombreTextBox.Text == "")
+           
+
+
+        }
+
+        protected void IniciarButton_Click(object sender, EventArgs e)
+        {
+
+            if (NombreTextBox.Text == "" || ContrasenaTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar ambos Campos!!');</script>");
+            }
+            else
             {
                 if (ValidarUsuario() && ValidarContrasena() == true)
                 {
@@ -51,16 +62,8 @@ namespace SistemaDeVentasDiscografico
 
                 }
             }
-            else
-            {
-
-            }
-           
-        }
-
-        protected void verCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
             
+           
         }
     }
 }
