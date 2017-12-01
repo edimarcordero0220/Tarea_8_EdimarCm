@@ -134,6 +134,7 @@ namespace SistemaDeVentasDiscografico.UI
             Entidades.Facturas fac = new Entidades.Facturas();
             LlenarClase(fac);
             FacturaBLL.Insertar(fac);
+            Limpiar();
             Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
           
         }
@@ -172,5 +173,33 @@ namespace SistemaDeVentasDiscografico.UI
         {
             BuscarClientes(ClientesBLL.Buscar(v.String(ClienteTextBox.Text)));
         }
+
+        public void Limpiar()
+        {
+            IdDiscoTextBox.Text = "";
+            IDTextBox.Text = "";
+            NombreDiscoTextBox.Text = "";
+            NombreTextBox.Text = "";
+            ClienteTextBox.Text = "";
+            PrecioTextBox.Text = "";
+        }
+        protected void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (IDTextBox.Text == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el Campo Id');</script>");
+            }
+            else
+            {
+                FacturaBLL.Eliminar(v.String(IDTextBox.Text));
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Proceso Completado');</script>");
+            }
+        
+    }
     }
 }
