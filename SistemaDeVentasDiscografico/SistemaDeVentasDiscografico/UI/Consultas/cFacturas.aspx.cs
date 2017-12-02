@@ -13,7 +13,13 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                Listas = BLL.FacturaBLL.GetListTodo();
 
+                ConsultaFacturaGridView.DataSource = Listas;
+                ConsultaFacturaGridView.DataBind();
+            }
         }
 
         public static List<Facturas> Listas { get; set; }
@@ -62,10 +68,33 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
                     ConsultaFacturaGridView.DataBind();
                 }
             }
+            if (DropDownList.SelectedIndex == 4)
+            {
+                if (DesdeTextBox.Text != "" && HastaTextBox.Text != "")
+                {
+                    DateTime desde = Convert.ToDateTime(DesdeTextBox.Text);
+                    DateTime hasta = Convert.ToDateTime(HastaTextBox.Text);
+                    if (desde <= hasta)
+                    {
+                        Listas = BLL.FacturaBLL.GetList(p => p.FechaVenta >= desde && p.FechaVenta <= hasta);
+
+                    }
+                    else
+                    {
+
+                        Listas = null;
+                    }
+                }
+                else
+                {
+
+                    Listas = null;
+                }
 
 
-            ConsultaFacturaGridView.DataSource = Listas;
-            ConsultaFacturaGridView.DataBind();
+                ConsultaFacturaGridView.DataSource = Listas;
+                ConsultaFacturaGridView.DataBind();
+            }
         }
 
         private bool ValidarBuscar()
@@ -95,7 +124,7 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
 
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("../Reportes/DfReporte.aspx");
+            Response.Redirect("../Reportes/DfReporte.aspx");
         }
     }
 }

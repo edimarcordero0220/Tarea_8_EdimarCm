@@ -30,6 +30,18 @@ namespace Entidades
                 return new List<TEntity>();
             }
         }
+        public List<TEntity> GetListTodo()
+        {
+            try
+            {
+                return EntitySet.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         private DbSet<TEntity> EntitySet
         {
             get

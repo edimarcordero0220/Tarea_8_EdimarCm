@@ -80,13 +80,32 @@ namespace SistemaDeVentasDiscografico.Registros
         }
         public void BuscarDisco(Entidades.Discos d)
         {
+            if (DiscoBLL.Buscar(String(IdTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
+               
 
-            ProductorTextBox.Text = d.Productor;
-            NombreTextBox.Text = d.NombreDisco;
-            SelloTextBox.Text = d.SelloDiscografico;
-            ArtistaTextBox.Text = d.Artista;
+            }
+            else
+            {
+                ProductorTextBox.Text = d.Productor;
+                NombreTextBox.Text = d.NombreDisco;
+                SelloTextBox.Text = d.SelloDiscografico;
+                ArtistaTextBox.Text = d.Artista;
+            }
 
 
+           
+
+        }
+
+    
+
+        public int String(string texto)
+        {
+            int numero = 0;
+            int.TryParse(texto, out numero);
+            return numero;
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -98,9 +117,10 @@ namespace SistemaDeVentasDiscografico.Registros
             else
             {
                 BuscarDisco(DiscoBLL.Buscar(v.String(IdTextBox.Text)));
+                
 
             }
-
+            
         }
     }
 }

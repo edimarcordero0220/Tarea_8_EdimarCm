@@ -69,29 +69,61 @@ namespace SistemaDeVentasDiscografico.UI
 
         public void BuscarFactura(Facturas f)
         {
-            IDTextBox.Text = f.FacturaId.ToString();
+            if (FacturaBLL.Buscar(String(IDTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
 
-            f.FechaVenta = Convert.ToDateTime(FechaTextBox.Text);
-            f.Nombre = ClienteTextBox.Text;
-            NombreTextBox.Text = f.Nombre.ToString();
+
+            }
+            else
+            {
+                IDTextBox.Text = f.FacturaId.ToString();
+
+                f.FechaVenta = Convert.ToDateTime(FechaTextBox.Text);
+                f.Nombre = ClienteTextBox.Text;
+                NombreTextBox.Text = f.Nombre.ToString();
+            }
+                
 
             CargarData();
 
 
 
         }
+        public int String(string texto)
+        {
+            int numero = 0;
+            int.TryParse(texto, out numero);
+            return numero;
+        }
         public void BuscarDiscos(Discos d)
         {
-            IdDiscoTextBox.Text = d.DiscoId.ToString();
-            NombreDiscoTextBox.Text = d.NombreDisco;
+            if (DiscoBLL.Buscar(String(IdDiscoTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
 
+
+            }
+            else
+            {
+                IdDiscoTextBox.Text = d.DiscoId.ToString();
+                NombreDiscoTextBox.Text = d.NombreDisco;
+            }
         }
 
         public void BuscarClientes(Clientes c)
         {
-            ClienteTextBox.Text = c.ClienteId.ToString();
-            NombreTextBox.Text = c.NombreCliente;
+            if (ClientesBLL.Buscar(String(ClienteTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
 
+
+            }
+            else
+            {
+                ClienteTextBox.Text = c.ClienteId.ToString();
+                NombreTextBox.Text = c.NombreCliente;
+            }
         }
         public void LimpiarTexbox()
         {
@@ -126,7 +158,7 @@ namespace SistemaDeVentasDiscografico.UI
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-
+            BuscarFactura(FacturaBLL.Buscar(v.String(IDTextBox.Text)));
         }
 
         protected void GuardarButton_Click(object sender, EventArgs e)

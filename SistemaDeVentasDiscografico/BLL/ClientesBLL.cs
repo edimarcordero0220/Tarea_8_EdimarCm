@@ -71,5 +71,16 @@ namespace BLL
             }
         }
 
+        public static List<Clientes> GetListTodo()
+        {
+            List<Clientes> lista = null;
+            using (var conn = new Repositorio<Clientes>())
+            {
+                lista = conn.GetListTodo().ToList();
+            }
+
+            return lista;
+        }
+
     }
 }

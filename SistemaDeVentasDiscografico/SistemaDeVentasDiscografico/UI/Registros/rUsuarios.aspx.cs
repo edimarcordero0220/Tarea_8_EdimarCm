@@ -80,27 +80,20 @@ namespace SistemaDeVentasDiscografico.Registros
         }
         public void BuscarUsuario(Entidades.Usuarios u)
         {
-           
+            if (UsuarioBLL.Buscar(String(IdTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
+
+
+            }
+            else
+            {
 
                 NombreTextBox.Text = u.Nombre;
                 ContrasenaTextBox.Text = u.Contrasena;
                 ConfirmarTextBox.Text = u.ConfirmarContrasena;
 
- 
-        }
-
-        private bool ValidarBuscar()
-        {
-            if (UsuarioBLL.Buscar(String(IdTextBox.Text)) == null)
-            {
-                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
-                return false;
-
             }
-
-            return true;
-
-
         }
 
         public int String(string texto)

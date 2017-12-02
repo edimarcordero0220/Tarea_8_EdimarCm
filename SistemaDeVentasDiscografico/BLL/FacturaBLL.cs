@@ -63,6 +63,16 @@ namespace BLL
                 return repositorio.GetList(criterioBusqueda);
             }
         }
+        public static List<Facturas> GetListTodo()
+        {
+            List<Facturas> lista = null;
+            using (var conn = new Repositorio<Facturas>())
+            {
+                lista = conn.GetListTodo().ToList();
+            }
+
+            return lista;
+        }
 
     }
 }

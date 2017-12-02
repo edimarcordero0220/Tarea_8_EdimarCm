@@ -28,13 +28,28 @@ namespace SistemaDeVentasDiscografico.Registros
         }
         public void Buscar(Clientes c)
         {
-            IdTextBox.Text = c.ClienteId.ToString();
-            NombreTextBox.Text = c.NombreCliente;
-            ApellidoTextBox.Text = c.ApellidoCliente;
-            DireccionTextBox.Text = c.DireccionCliente;
-            CedulaTextBox.Text = c.CedulaCliente;
+            if (ClientesBLL.Buscar(String(IdTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
 
 
+            }
+            else
+            {
+                IdTextBox.Text = c.ClienteId.ToString();
+                NombreTextBox.Text = c.NombreCliente;
+                ApellidoTextBox.Text = c.ApellidoCliente;
+                DireccionTextBox.Text = c.DireccionCliente;
+                CedulaTextBox.Text = c.CedulaCliente;
+            }
+
+        }
+
+        public int String(string texto)
+        {
+            int numero = 0;
+            int.TryParse(texto, out numero);
+            return numero;
         }
         public void Limpiar()
         {

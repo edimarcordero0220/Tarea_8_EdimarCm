@@ -139,8 +139,11 @@
     </None>
     <Content Include="UI\General\gCatalogo.aspx" />
     <Content Include="UI\General\VerCatalogo.aspx" />
+    <Content Include="UI\icon\user.png" />
     <Content Include="UI\Registros\Factura.aspx" />
     <Content Include="UI\Registros\DetalleDisco.aspx" />
+    <Content Include="UI\Registros\p.png" />
+    <Content Include="UI\Registros\svg.png" />
     <Content Include="UI\Reportes\ClienteReportes.aspx" />
     <Content Include="UI\Reportes\DataSetSistemaDiscos.xsc">
       <DependentUpon>DataSetSistemaDiscos.xsd</DependentUpon>

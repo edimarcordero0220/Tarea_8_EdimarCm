@@ -13,8 +13,10 @@
             <dl>
                 <dd>
                     <h5><span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Filtrar</span>&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList" runat="server">
+                        <asp:ListItem>Todos</asp:ListItem>
                         <asp:ListItem Value="Id"></asp:ListItem>
                         <asp:ListItem Value="NombreUsuario">Nombre</asp:ListItem>
+                        <asp:ListItem>Fecha</asp:ListItem>
                         </asp:DropDownList>
                         &nbsp;<asp:TextBox ID="FlitrarTextbox" runat="server" Width="289px" Height="33px"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;<asp:Button ID="BuscarButton" runat="server" CssClass="auto-style1" Height="36px" OnClick="BuscarButton_Click" Text="Buscar" Width="69px" />
@@ -23,6 +25,7 @@
                     <h5><span class="auto-style1">Desde</span>
                         <asp:TextBox ID="DesdeTextBox" runat="server" Width="167px" Height="33px"></asp:TextBox>
                         &nbsp;&nbsp;<span class="auto-style1">Hasta&nbsp;</span><asp:TextBox ID="HastaTextBox" runat="server" CssClass="auto-style1" Width="167px" Height="33px"></asp:TextBox>
+                        <asp:Button ID="FiltrarButton" runat="server" OnClick="FiltrarButton_Click" Text="Filtrar" />
                     </h5>
             </dl>
             <asp:GridView ID="ConsultaClienteGridView" CssClass="auto-style3" runat="server" ForeColor="#333333" Width="758px" ShowFooter="True" Height="115px" HorizontalAlign="Center">

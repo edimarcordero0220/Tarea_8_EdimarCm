@@ -12,6 +12,7 @@
                         <asp:ListItem>Nombre Cliente</asp:ListItem>
                         <asp:ListItem Value="NombreUsuario">Cliente Id</asp:ListItem>
                         <asp:ListItem>Nombre Disco</asp:ListItem>
+                        <asp:ListItem>Fecha</asp:ListItem>
                         </asp:DropDownList>
                         &nbsp;<asp:TextBox ID="FlitrarTextbox" runat="server" Width="289px" Height="33px"></asp:TextBox>
                         &nbsp;&nbsp;<asp:Button ID="BuscarButton" runat="server" Height="33px" OnClick="BuscarButton_Click" Text="Buscar" Width="68px" />

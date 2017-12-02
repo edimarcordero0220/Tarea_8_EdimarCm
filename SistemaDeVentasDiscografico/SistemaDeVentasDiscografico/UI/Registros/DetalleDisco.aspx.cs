@@ -44,22 +44,38 @@ namespace SistemaDeVentasDiscografico.UI.Registros
         }
         public void BuscarDetalle(DetalleDiscos d)
         {
-            IdTextBox.Text = d.DetalleDiscoID.ToString();
+            if (DetalleDiscoBLL.Buscar(String(IdTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
 
-            d.FechaCreacion = Convert.ToDateTime(FechaTextBox.Text);
-            d.Nombre =  IdDiscoTextBox.Text;
-            IdDiscoTextBox.Text= d.DiscoId.ToString();
-            
-            CargarData();
-           
 
+            }
+            else
+            {
+                IdTextBox.Text = d.DetalleDiscoID.ToString();
+
+                d.FechaCreacion = Convert.ToDateTime(FechaTextBox.Text);
+                d.Nombre = IdDiscoTextBox.Text;
+                IdDiscoTextBox.Text = d.DiscoId.ToString();
+
+                CargarData();
+
+            }
 
         }
         public void BuscarDiscos(Discos d)
         {
-            IdTextBox.Text = d.DiscoId.ToString();
-            NombreTextBox.Text = d.NombreDisco;
+            if (DiscoBLL.Buscar(String(IdDiscoTextBox.Text)) == null)
+            {
+                base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
 
+
+            }
+            else
+            {
+                IdTextBox.Text = d.DiscoId.ToString();
+                NombreTextBox.Text = d.NombreDisco;
+            }
         }
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
@@ -145,9 +161,9 @@ namespace SistemaDeVentasDiscografico.UI.Registros
   
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (IdTextBox.Text == "" || DetalleDiscoBLL.Buscar(String(IdTextBox.Text)) == null)
+            if (IdTextBox.Text == "" )
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el campo ID, o No existe en nuestra base de datos');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debes Llenar el campo ID');</script>");
              
                 
             }

@@ -13,22 +13,35 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                Listas = BLL.DetalleDiscoBLL.GetListTodo();
 
+                ConsultaDetalleDiscoGridView.DataSource = Listas;
+                ConsultaDetalleDiscoGridView.DataBind();
+            }
         }
         public static List<DetalleDiscos> Listas { get; set; }
         private void BuscarSelecCombo()
         {
-           
-            
 
-                if (DropDownList.SelectedIndex == 0)
+            Listas = null;
+
+            if (DropDownList.SelectedIndex == 0)
+            {
+                Listas = BLL.DetalleDiscoBLL.GetListTodo();
+
+            }
+
+
+            if (DropDownList.SelectedIndex == 1)
                 {
                     int Busqueda = Utilidades.TOINT(FlitrarTextbox.Text);
                     Listas = DetalleDiscoBLL.GetList(p => p.DetalleDiscoID == Busqueda);
                     ConsultaDetalleDiscoGridView.DataSource = Listas;
                     ConsultaDetalleDiscoGridView.DataBind();
                 }
-                else if (DropDownList.SelectedIndex == 1)
+                else if (DropDownList.SelectedIndex == 2)
                 {
                     if (FlitrarTextbox.Text == "" )
                     {
@@ -41,16 +54,39 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
                         ConsultaDetalleDiscoGridView.DataBind();
                     }
                 }
-                if (DropDownList.SelectedIndex == 2)
+                if (DropDownList.SelectedIndex == 3)
                 {
                     int Busqueda = Utilidades.TOINT(FlitrarTextbox.Text);
                     Listas = DetalleDiscoBLL.GetList(p => p.DiscoId == Busqueda);
                     ConsultaDetalleDiscoGridView.DataSource = Listas;
                     ConsultaDetalleDiscoGridView.DataBind();
+            }
+            if (DropDownList.SelectedIndex == 4)
+            {
+                if (DesdeTextBox.Text != "" && HastaTextBox.Text != "")
+                {
+                    DateTime desde = Convert.ToDateTime(DesdeTextBox.Text);
+                    DateTime hasta = Convert.ToDateTime(HastaTextBox.Text);
+                    if (desde <= hasta)
+                    {
+                        Listas = BLL.DetalleDiscoBLL.GetList(p => p.FechaCreacion >= desde && p.FechaCreacion <= hasta);
+
+                    }
+                    else
+                    {
+
+                        Listas = null;
+                    }
                 }
+                else
+                {
+
+                    Listas = null;
+                }
+            }
 
 
-                ConsultaDetalleDiscoGridView.DataSource = Listas;
+            ConsultaDetalleDiscoGridView.DataSource = Listas;
                 ConsultaDetalleDiscoGridView.DataBind();
             }
         private bool ValidarBuscar()
