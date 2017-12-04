@@ -21,6 +21,11 @@ html {
 body {
     margin: 0;
 }
+.contenedor {
+    width: 10%;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
 article,
 aside,

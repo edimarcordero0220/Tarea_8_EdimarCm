@@ -1,0 +1,15 @@
+﻿body {
+}
+.contenedor {
+    width: 90%;
+   
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+
+}

@@ -18,5 +18,25 @@ namespace Entidades
         public string NombreDisco { get; set; }
         public int Precio { get; set; }
         public int Total { get; set; }
+
+        public virtual List<Discos> discos { get; set; }
+        public virtual List <Clientes>clientes{ get; set; }
+
+        public Facturas()
+        {
+            this.discos = new List<Discos>();
+            this.clientes = new List<Clientes>();
+        }
+
+        public Facturas(int idfactura, int idcliente, DateTime fechaventa, int precio)
+        {
+            this.FacturaId = idfactura;
+            this.ClienteId = idcliente;
+            this.FechaVenta = fechaventa;
+            this.Precio = precio;
+            this.discos = new List<Discos>();
+            this.clientes = new List<Clientes>();
+        }
+
     }
 }

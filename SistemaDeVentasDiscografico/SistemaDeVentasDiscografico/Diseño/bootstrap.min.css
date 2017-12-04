@@ -19,6 +19,11 @@ html {
 body {
     margin: 0
 }
+.contenedor {
+    width: 10%;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block

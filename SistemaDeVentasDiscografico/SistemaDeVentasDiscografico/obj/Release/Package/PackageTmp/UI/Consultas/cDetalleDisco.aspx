@@ -9,9 +9,10 @@
             <dl>
                 <dd>
                     <h5><span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Filtrar</span>&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList" runat="server">
+                        <asp:ListItem>Todos</asp:ListItem>
                         <asp:ListItem Value="Id"></asp:ListItem>
-                        <asp:ListItem Value="NombreUsuario">DiscoID</asp:ListItem>
                         <asp:ListItem>Nombre</asp:ListItem>
+                        <asp:ListItem>Fecha</asp:ListItem>
                         </asp:DropDownList>
                         &nbsp;<asp:TextBox ID="FlitrarTextbox" runat="server" Width="289px" Height="33px"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;<asp:Button ID="BuscarButton" runat="server" Height="30px" OnClick="BuscarButton_Click" Text="Buscar" Width="64px" />

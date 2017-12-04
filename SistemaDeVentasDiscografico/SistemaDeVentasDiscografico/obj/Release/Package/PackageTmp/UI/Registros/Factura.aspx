@@ -83,9 +83,9 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT [Nombre], [UsuarioId] FROM [Usuarios]"></asp:SqlDataSource>
                         <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
 &nbsp;
-                        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
+                        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" OnClick="NuevoButton_Click" />
 &nbsp;
-                        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" />
+                        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" OnClick="EliminarButton_Click" />
                     </div>
                 </div>
     <br />
