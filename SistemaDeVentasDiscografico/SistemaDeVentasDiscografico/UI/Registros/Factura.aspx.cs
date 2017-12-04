@@ -18,7 +18,7 @@ namespace SistemaDeVentasDiscografico.UI
         System.Data.DataRow row;
         Validar v = new Validar();
         DataTable dt = new DataTable();
-
+        private static List<Entidades.Facturas> listas;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,16 +32,17 @@ namespace SistemaDeVentasDiscografico.UI
                 ViewState["Facturas"] = dt;
             }
         }
-      /*  public void Llenar(List<Entidades.Discos> llenar)
+        public void BuscarGrid(List<Entidades.Discos> llenar)
         {
+           
             foreach (var li in llenar)
             {
                 dt = (DataTable)ViewState["Detalle"];
-                dt.Rows.Add(li.DiscoId, li.NombreDisco,);
-                ViewState["Detalle"] = dt;
+                dt.Rows.Add(li.DiscoId, li.NombreDisco ,li.FechaLanzamiento);
                 this.BindGrid();
             }
-        }*/
+
+        }
 
         public void CalcularMonto()
         {
@@ -63,22 +64,12 @@ namespace SistemaDeVentasDiscografico.UI
         }
 
 
-        private void CargarData()
-        {
-           /* DetalleDiscos d = new DetalleDiscos();
-            SqlConnection conetar = new SqlConnection("Data Source=DESKTOP-19EANE5;Initial Catalog=SistemaDb;Integrated Security=True");
-            SqlDataAdapter s = new SqlDataAdapter("select Cancion, DuraciondelaCancion from DetalleDiscos", conetar);
-            //DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            s.Fill(dt);
-            this.DetalleDiscoGridView.DataSource = (dt);
-            DetalleDiscoGridView.DataBind();*/
-
-
-        }
+        
+        
 
         public void BuscarFactura(Facturas f)
         {
+            listas = BLL.FacturaBLL.GetList(A => A.FacturaId == f.FacturaId);
             if (FacturaBLL.Buscar(String(IDTextBox.Text)) == null)
             {
                 base.Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe');</script>");
@@ -87,6 +78,7 @@ namespace SistemaDeVentasDiscografico.UI
             }
             else
             {
+                
                 IDTextBox.Text = f.FacturaId.ToString();
 
                 f.FechaVenta = Convert.ToDateTime(FechaTextBox.Text);
@@ -95,7 +87,7 @@ namespace SistemaDeVentasDiscografico.UI
             }
                 
 
-            CargarData();
+           // CargarData();
 
 
 

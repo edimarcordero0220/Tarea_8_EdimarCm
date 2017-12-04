@@ -19,13 +19,13 @@ namespace Entidades
         public int Precio { get; set; }
         public int Total { get; set; }
 
-        public virtual List<Discos> discos { get; set; }
-        public virtual List <Clientes>clientes{ get; set; }
+        public List<Discos> discos;
+        public List<Clientes> clientes;
 
         public Facturas()
         {
-            this.discos = new List<Discos>();
-            this.clientes = new List<Clientes>();
+          /// this.discos = new List<Discos>();
+          // this.clientes = new List<Clientes>();
         }
 
         public Facturas(int idfactura, int idcliente, DateTime fechaventa, int precio)

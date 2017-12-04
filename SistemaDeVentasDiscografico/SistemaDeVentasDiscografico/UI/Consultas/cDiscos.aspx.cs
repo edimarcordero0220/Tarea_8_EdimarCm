@@ -14,7 +14,13 @@ namespace SistemaDeVentasDiscografico.UI.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                Listas = BLL.DiscoBLL.GetListTodo();
 
+                ConsultaDiscoGridView.DataSource = Listas;
+                ConsultaDiscoGridView.DataBind();
+            }
         }
         public static List<Discos> Listas { get; set; }
         private void BuscarSelecCombo()

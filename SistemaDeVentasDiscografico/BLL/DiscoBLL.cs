@@ -60,6 +60,16 @@ namespace BLL
                 return repositorio.GetList(criterioBusqueda);
             }
         }
+        public static List<Discos> GetListTodo()
+        {
+            List<Discos> lista = null;
+            using (var conn = new Repositorio<Discos>())
+            {
+                lista = conn.GetListTodo().ToList();
+            }
+
+            return lista;
+        }
 
     }
 }
