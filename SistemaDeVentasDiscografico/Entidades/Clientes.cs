@@ -22,5 +22,9 @@ namespace Entidades
         {
             throw new NotImplementedException();
         }
+        public Clientes()
+        {
+                
+        }
     }
 }

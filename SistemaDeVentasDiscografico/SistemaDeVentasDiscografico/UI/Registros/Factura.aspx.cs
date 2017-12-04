@@ -32,6 +32,16 @@ namespace SistemaDeVentasDiscografico.UI
                 ViewState["Facturas"] = dt;
             }
         }
+      /*  public void Llenar(List<Entidades.Discos> llenar)
+        {
+            foreach (var li in llenar)
+            {
+                dt = (DataTable)ViewState["Detalle"];
+                dt.Rows.Add(li.DiscoId, li.NombreDisco,);
+                ViewState["Detalle"] = dt;
+                this.BindGrid();
+            }
+        }*/
 
         public void CalcularMonto()
         {
